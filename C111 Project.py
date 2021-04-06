@@ -34,6 +34,9 @@ first_stdev_start, first_stdev_end = mean1 - std1, mean1 + std1
 second_stdev_start, second_stdev_end = mean1 - (std1 * 2), mean1 + (std1 * 2)
 third_stdev_start, third_stdev_end = mean1 - (std1 * 3), mean1 + (std1 * 3)
 
+z_score = (population_mean - mean1)/population_stdev
+print(z_score)
+
 fig = ff.create_distplot([mean_list], ["Reading Time"], show_hist=False)
 fig.add_trace(go.Scatter(x=[mean1, mean1], y=[0, 0.17], mode="lines", name="mean"))
 fig.add_trace(go.Scatter(x=[first_stdev_start, first_stdev_start], y=[0, 0.17], mode="lines", name="Standard Deviation 1 Start"))
